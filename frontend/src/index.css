@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .glass-panel {
+  background-color: rgba(16, 22, 38, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.light .glass-panel {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Floating 3D Cards */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+}
+
+/* Neumorphic buttons */
+.btn-neumorphic-dark {
+  background: linear-gradient(145deg, #161e33, #0d1222);
+  box-shadow: 4px 4px 10px #080b15, -4px -4px 10px #1c2743;
+  transition: all 0.2s ease;
+}
+
+.btn-neumorphic-dark:active {
+  box-shadow: inset 2px 2px 5px #080b15, inset -2px -2px 5px #1c2743;
+}
+
+.btn-neumorphic-light {
+  background: linear-gradient(145deg, #ffffff, #e2e8f0);
+  box-shadow: 4px 4px 10px #cbd5e1, -4px -4px 10px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.btn-neumorphic-light:active {
+  box-shadow: inset 2px 2px 5px #cbd5e1, inset -2px -2px 5px #ffffff;
+}
+
+/* Neon Glows */
+.glow-border-green {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+
+.glow-border-yellow {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+}
+
+.glow-border-red {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.25);
+}
+
+/* Floor map animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+}
+
+.pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Status dots */
+.status-dot-green {
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+.status-dot-yellow {
+  background-color: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+.status-dot-red {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
