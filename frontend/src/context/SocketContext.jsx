@@ -10,7 +10,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     // Determine backend host url (default port 5000)
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://deskguard-4adh.onrender.com';
     
     // Connect socket with user details if available
     const socketOptions = {
